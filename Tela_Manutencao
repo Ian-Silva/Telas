@@ -1,0 +1,80 @@
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JButton;
+
+public class Tela_Manutencao {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Tela_Manutencao window = new Tela_Manutencao();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Tela_Manutencao() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblEscolha_Manutencao = new JLabel("Escolha a Manuten\u00E7\u00E3o a ser Realizada");
+		lblEscolha_Manutencao.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblEscolha_Manutencao.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEscolha_Manutencao.setBounds(31, 28, 375, 40);
+		frame.getContentPane().add(lblEscolha_Manutencao);
+		
+		JButton btnManutencao_Banco = new JButton("Banco");
+		btnManutencao_Banco.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnManutencao_Banco.setBounds(71, 105, 122, 40);
+		frame.getContentPane().add(btnManutencao_Banco);
+		
+		JButton btnManutencao_Agencia = new JButton("Ag\u00EAncia");
+		btnManutencao_Agencia.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnManutencao_Agencia.setBounds(71, 156, 122, 40);
+		frame.getContentPane().add(btnManutencao_Agencia);
+		
+		JButton btnManutencao_Conta = new JButton("Conta");
+		btnManutencao_Conta.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnManutencao_Conta.setBounds(71, 207, 122, 40);
+		frame.getContentPane().add(btnManutencao_Conta);
+		
+		JButton btnManutencao_Cliente = new JButton("Cliente");
+		btnManutencao_Cliente.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnManutencao_Cliente.setBounds(231, 105, 122, 40);
+		frame.getContentPane().add(btnManutencao_Cliente);
+		
+		JButton btnManutencao_Empregador = new JButton("Empregador");
+		btnManutencao_Empregador.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnManutencao_Empregador.setBounds(231, 156, 122, 40);
+		frame.getContentPane().add(btnManutencao_Empregador);
+		
+		frame.setBackground(Color.darkGray);
+	}
+
+}
