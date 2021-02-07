@@ -5,10 +5,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Menu_Opcoes {
 
-	private JFrame frame;
+	 JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -38,21 +41,46 @@ public class Menu_Opcoes {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 253, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnRealizar_Cadastro = new JButton("Realizar Cadastro");
+		btnRealizar_Cadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Tela_Cadastro window = new Tela_Cadastro();
+				window.frame.setVisible(true);
+				
+			}
+		});
 		btnRealizar_Cadastro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnRealizar_Cadastro.setBounds(32, 75, 176, 33);
 		frame.getContentPane().add(btnRealizar_Cadastro);
 		
 		JButton btnManutencao_Geral = new JButton("Manuten\u00E7\u00E3o Geral");
+		btnManutencao_Geral.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Tela_Manutencao window = new Tela_Manutencao();
+				window.frame.setVisible(true);
+				
+			}
+		});
 		btnManutencao_Geral.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnManutencao_Geral.setBounds(32, 119, 176, 33);
 		frame.getContentPane().add(btnManutencao_Geral);
 		
 		JButton btnOpcoes = new JButton("Op\u00E7\u00F5es");
+		btnOpcoes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Tela_Opcoes window = new Tela_Opcoes();
+				window.frame.setVisible(true);
+				
+			}
+		});
 		btnOpcoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnOpcoes.setBounds(32, 163, 176, 33);
 		frame.getContentPane().add(btnOpcoes);
