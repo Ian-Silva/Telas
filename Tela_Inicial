@@ -6,6 +6,11 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.ComponentOrientation;
+import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class Tela_Inicial {
 
@@ -35,14 +40,15 @@ public class Tela_Inicial {
 	public Tela_Inicial() {
 		initialize();
 	}
-
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblBem_Vindo = new JLabel("Bem-Vindo ao Banco Central");
@@ -71,6 +77,15 @@ public class Tela_Inicial {
 		textConta.setColumns(10);
 		
 		JButton btnAvancar = new JButton("Avan\u00E7ar");
+		btnAvancar.setHorizontalTextPosition(SwingConstants.LEFT);
+		btnAvancar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Menu_Opcoes window = new Menu_Opcoes();
+				window.frame.setVisible(true);
+				
+			}
+		});
 		btnAvancar.setBounds(328, 219, 96, 31);
 		frame.getContentPane().add(btnAvancar);
 	}
